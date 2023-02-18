@@ -2,9 +2,9 @@
   "name": "sqltools-driver-mysql",
   "displayName": "SQLTools MySQL/MariaDB",
   "description": "SQLTools MySQL/MariaDB",
-  "version": "0.4.1",
+  "version": "0.5.1",
   "engines": {
-    "vscode": "^1.42.0"
+    "vscode": "^1.72.0"
   },
   "publisher": "mtxr",
   "license": "MIT",
@@ -66,10 +66,10 @@
   "devDependencies": {
     "@mysql/xdevapi": "^8.0.20",
     "@sqltools/base-driver": "latest",
-    "@sqltools/types": "^0.1.6",
+    "@sqltools/types": "^0.1.7",
     "@types/lodash": "^4.14.123",
     "@types/mysql": "^2.15.12",
-    "@types/vscode": "^1.42.0",
+    "@types/vscode": "^1.72.0",
     "compare-versions": "3.6.0",
     "concurrently": "^5.2.0",
     "esbuild": "^0.15.7",

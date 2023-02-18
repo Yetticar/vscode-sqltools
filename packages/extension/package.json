@@ -2,7 +2,7 @@
     "name": "sqltools",
     "displayName": "SQLTools",
     "description": "Connecting users to many of the most commonly used databases. Welcome to database management done right.",
-    "version": "0.26.0",
+    "version": "0.27.1",
     "publisher": "mtxr",
     "license": "MIT",
     "preview": false,
@@ -18,7 +18,7 @@
     "author": "Matheus Teixeira <me@mteixeira.dev>",
     "private": true,
     "engines": {
-        "vscode": "^1.42.0"
+        "vscode": "^1.72.0"
     },
     "categories": [
         "Programming Languages",
@@ -71,7 +71,8 @@
     "activationEvents": [
         "*",
         "onLanguage:sql",
-        "onCommand:sqltools.selectConnection"
+        "onCommand:sqltools.selectConnection",
+        "onAuthenticationRequest:sqltools-driver-credentials"
     ],
     "contributes": {
         "colors": [
@@ -544,7 +545,7 @@
                 },
                 "sqltools.queryParams.regex": {
                     "type": "string",
-                    "default": "\\$[\\d]+|\\$\\[[\\d\\w]+\\]",
+                    "default": "\\$[\\d]+|\\$\\[([\\d\\w]+)\\]",
                     "description": "RegEx used to identify query parameters.",
                     "required": true
                 },
@@ -721,6 +722,15 @@
                                         "default": null
                                     }
                                 }
+                            },
+                            "variables": {
+                                "type": [
+                                    "object",
+                                    "null"
+                                ],
+                                "default": null,
+                                "description": "Connection variables in a key/value pair format. Use this property with `sqltools.queryParams.enableReplace` to replace the variables without prompting.",
+                                "properties": {}
                             }
                         }
                     }
@@ -828,6 +838,11 @@
                     ],
                     "default": false,
                     "description": "Enable node runtime usage."
+                },
+                "sqltools.disableNodeDetectNotifications": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Disable node runtime detection notifications."
                 },
                 "sqltools.languageServerEnv": {
                     "type": "object",
@@ -1211,7 +1226,7 @@
         "@types/command-exists": "^1.2.0",
         "@types/jest": "^24.0.11",
         "@types/lodash": "^4.14.123",
-        "@types/vscode": "^1.42.0",
+        "@types/vscode": "^1.72.0",
         "cross-env": "^7.0.2",
         "jest": "^26.6.3",
         "jest-cli": "^26.6.3",

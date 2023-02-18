@@ -4,6 +4,15 @@ This package is part of [vscode-sqltools](https://vscode-sqltools.mteixeira.dev/
 
 ## Changelog
 
+### 0.5.1
+
+- Use 0.27 extension's new ability to store connection passwords securely. [#1084](https://github.com/mtxr/vscode-sqltools/pull/1084)
+- Avoid storing redundant properties on connections that use `connectString`. [#1087](https://github.com/mtxr/vscode-sqltools/issues/1087)
+
+### 0.5.0
+
+- Sync with 0.27 release of main extension.
+
 ### 0.4.0
 
 - No longer promote as an official driver for Redshift. [#991](https://github.com/mtxr/vscode-sqltools/pull/991)

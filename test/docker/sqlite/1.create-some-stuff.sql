@@ -1,7 +1,7 @@
 -- @conn SQLite
 DROP TABLE IF EXISTS contacts;
 DROP TABLE IF EXISTS contacts_metadata;
-DROP VIEW IF EXISTS contacts_view;
+DROP VIEW IF EXISTS contacts_view_$[env];
 
 CREATE TABLE contacts (
   first_name TEXT NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE contacts_metadata (
   FOREIGN KEY(contact_id) REFERENCES contact(id)
 );
 
-CREATE VIEW contacts_view
+CREATE VIEW contacts_view_$[env]
 AS
 SELECT
 *
