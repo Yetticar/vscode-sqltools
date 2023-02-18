@@ -28,3 +28,4 @@ add-new.diff
 *.tgz
 .todo
 .test-results/
+packages/driver.sqlite/.vscode/tasks.json
