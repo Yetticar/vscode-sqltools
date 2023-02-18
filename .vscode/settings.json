@@ -15,5 +15,7 @@
     "**/dist": true,
     "docs": true,
     "packages": false,
-  }
+  },
+  "deno.enable": true,
+  "deno.unstable": true
 }
