@@ -1,11 +1,11 @@
 import { createLogger } from '@sqltools/log/src';
-import { TextEditor, TextEditorEdit, commands, SnippetString, env, workspace } from 'vscode';
+import { IExtension, NSDatabase } from '@sqltools/types';
 import Config from '@sqltools/util/config-manager';
-import { formatInsertQuery, format as queryFormat } from '@sqltools/util/query';
-import { insertText, getOrCreateEditor } from '@sqltools/vscode/utils';
-import { NSDatabase, IExtension } from '@sqltools/types';
-import { SidebarItem } from '../connection-manager/explorer';
 import { EXT_NAMESPACE } from '@sqltools/util/constants';
+import { format as queryFormat, formatInsertQuery } from '@sqltools/util/query';
+import { getOrCreateEditor, insertText } from '@sqltools/vscode/utils';
+import { commands, env, SnippetString, TextEditor, TextEditorEdit, workspace } from 'vscode';
+import { SidebarItem } from '../connection-manager/explorer';
 
 const log = createLogger('formatter');
 
